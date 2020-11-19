@@ -2,8 +2,8 @@ import React from 'react'
 import './App.style.scss';
 import { BrowserRouter } from "react-router-dom";
 import PagesURL from "./pages/pages.component";
-import NavMenu from './componenets/navmenu/navmenu.component';
-import Footer from './componenets/footer/footer.component'
+import NavMenu from './components/navmenu/navmenu.component';
+import Footer from './components/footer/footer.component'
 
 export default class App extends React.Component {
 
