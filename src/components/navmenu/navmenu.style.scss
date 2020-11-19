@@ -1,0 +1,14 @@
+ul {
+    overflow: auto;
+    ::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    li {
+        float: left;
+        padding: 1em;
+        display: block;
+    }
+}
