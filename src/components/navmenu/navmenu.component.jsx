@@ -1,10 +1,7 @@
 import React from "react";
 import '../../App.style.scss';
 import { Route, Link, NavLink } from "react-router-dom";
-
 import './navmenu.style.scss';
-
-
 
 
 export default function NavMenu(props) {
