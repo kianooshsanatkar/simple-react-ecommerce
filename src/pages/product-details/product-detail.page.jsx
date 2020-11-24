@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductImages from './product-image.component';
+import ProductImages from './product-images.component';
 import ProductProperties from './dynamic-properties.component';
 import { useParams } from 'react-router-dom';
 
