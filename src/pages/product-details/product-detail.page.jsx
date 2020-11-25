@@ -18,10 +18,10 @@ export default class ProductDetail extends React.Component {
     render() {
         return (
             <div>
-                <ProductImages Images={params.images} />
-                <h3>{params.Title}</h3>
-                <ProductProperties dynamicProperties={params.properties} />
-                <p>{params.Detail}</p>
+                <ProductImages Images={product.images} />
+                <h3>{product.Title}</h3>
+                <ProductProperties dynamicProperties={product.properties} />
+                <p>{product.Detail}</p>
             </div>
         );
     }
