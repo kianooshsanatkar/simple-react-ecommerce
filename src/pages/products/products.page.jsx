@@ -25,7 +25,7 @@ export default class Product extends React.Component {
         return (
             <div>
                 {
-                    items.map(
+                    this.state.items.map(
                         item =>
                             <ProductItem item={item} />
                     )
