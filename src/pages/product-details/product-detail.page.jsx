@@ -7,17 +7,14 @@ import { useParams } from 'react-router-dom';
 export default class ProductDetail extends React.Component {
     constructor(props) {
         super(props);
-
-        this.state = {
-            product: undefined,
-            productId: useParams().productId,
-        }
+        this.product = undefined;
+        this.productId = useParams().productId;
     }
 
     componentDidMount() {
-        fetch(`someURL/${productId}`).then(response => response.json()).then(pr => product = pr);
+        fetch(`someURL/${this.productId}`).then(response => response.json()).then(pr => this.product = pr);
     }
-    
+
     render() {
         return (
             <div>
