@@ -5,9 +5,7 @@ export default class Product extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            productsApiUrl:props.api_GetProducts,
             items: [],
-
         }
     }
 
@@ -16,7 +14,7 @@ export default class Product extends React.Component {
     }
 
     loadItems() {
-        fetch(this.state.productsApiUrl)
+        fetch(this.props.api_GetProducts)
             .then(response => response.json())
             .then(products => this.setState({ items: products }));
     }

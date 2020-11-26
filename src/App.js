@@ -9,20 +9,17 @@ export default class App extends React.Component {
 
   constructor() {
     super();
-    this.state = {
-      urls: {}
-    }
+    this.urls = this.getMenuLinks();
   }
 
   componentDidMount() {
-    this.setState({ urls: this.getMenuLinks() });
   }
 
   render() {
     return (
       <div>
         <BrowserRouter>
-          <NavMenu urls={this.state.urls} />
+          <NavMenu urls={this.urls} />
           <PagesURL />
           <Footer />
         </BrowserRouter>
