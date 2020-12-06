@@ -1,25 +1,25 @@
 import React from 'react'
 import './App.style.scss';
 import { BrowserRouter } from "react-router-dom";
+import { connect } from 'react-redux';
+
 import PagesURL from "./pages/pages.component";
-import NavMenu from './components/navmenu/navmenu.component';
-import Footer from './components/footer/footer.component'
+import Header from './components/header/header.component';
+import Footer from './components/footer/footer.component';
+import {mapDispatchToProps} from './redux/navitems';
 
-export default class App extends React.Component {
-
-  constructor() {
-    super();
-    this.urls = this.getMenuLinks();
-  }
+class App extends React.Component {
 
   componentDidMount() {
+    const url = this.getMenuLinks();
+    this.props.setNavAction({...url})
   }
 
   render() {
     return (
       <div>
         <BrowserRouter>
-          <NavMenu urls={this.urls} />
+          <Header />
           <PagesURL />
           <Footer />
         </BrowserRouter>
@@ -42,3 +42,9 @@ export default class App extends React.Component {
     );
   }
 }
+
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(App);
