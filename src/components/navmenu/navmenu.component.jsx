@@ -1,12 +1,18 @@
 import React from "react";
-import '../../App.style.scss';
+import { connect } from 'react-redux';
 import { Route, Link, NavLink } from "react-router-dom";
+
+import '../../App.style.scss';
 import './navmenu.style.scss';
+import {mapStateToProps} from '../../redux/navitems';
 
 
-export default function NavMenu(props) {
-    function setlinks(urls) {
+function NavMenu(props) {
+    console.log('NavMenu: ', props);
+    function setLinks(urls) {
         let links = []
+        if (!urls)
+            return;
         for (const [key, value] of Object.entries(urls)) {
             if (value.parent === "root")
                 links.push(<li key={key}><NavLink exact={value.exact} activeClassName="red" to={key}>{value.text}</NavLink></li>);
@@ -15,12 +21,14 @@ export default function NavMenu(props) {
         }
         return links;
     }
+
     return (
         <Route>
             <ul>
-                {setlinks(props.urls)}
+                {setLinks(props.navURL)}
             </ul>
         </Route>
     );
 }
 
+export default connect(mapStateToProps)(NavMenu);
