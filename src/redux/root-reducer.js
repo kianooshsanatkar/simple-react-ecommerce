@@ -1,7 +1,7 @@
 import {combineReducers} from 'redux';
 
 import userReducer from './user/user.reducer';
-import {navItemsReducer} from './navitems';
+import {navItemsReducer} from './navitemreducer';
 
 export default combineReducers({
     user: userReducer,

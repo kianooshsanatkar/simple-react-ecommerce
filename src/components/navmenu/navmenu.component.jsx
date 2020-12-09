@@ -4,7 +4,7 @@ import { Route, Link, NavLink } from "react-router-dom";
 
 import '../../App.style.scss';
 import './navmenu.style.scss';
-import {mapStateToProps} from '../../redux/navitems';
+import {mapStateToProps} from '../../redux/navitemreducer';
 
 
 function NavMenu(props) {
